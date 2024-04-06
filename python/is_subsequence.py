@@ -39,5 +39,17 @@ class Solution:
             
             index_1 += 1
 
-        if result_string == s:
-            return True
+        return result_string == s
+
+##good solution without result_string
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        i, j = 0, 0
+
+        while i < len(s) and j < len(t):
+            if s[i] == t[j]:
+                i += 1
+            
+            j += 1
+
+        return i == len(s)
